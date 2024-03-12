@@ -1,0 +1,230 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Practice</title>
+  <style>
+    #container{
+      width:400px;
+      height:400px;
+      position: relative;
+      background: red ;
+    }
+    #animate {
+      width: 40px ;
+      height: 40px ;
+      position: absolute;
+      background: yellow;
+    }
+  </style>
+
+</head>
+<body>
+<P><button onclick="myMove()">Click Me</button></P>
+<div id="container">
+  <div id="animate"></div>
+</div>
+<!--    <h2>Javascript try catch</h2>
+    <input id="demo" type="text">
+    <button type="button" onclick="myfunction()">Test Input</button>
+    <p id="p01"></p>
+    -->
+<script>
+function myMove(){
+  let id = null;
+  const elem = document.getElementById("animate");
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame(){
+    if (pos == 350){
+      clearInterval(id);
+    }
+    else {
+      pos++;
+      elem.style.top = pos +"px";
+      
+      elem.style.left = pos +"px";
+
+    }
+  }
+}
+//<body>
+  //<h2>Javascript validation</h2>
+  //<form name="myForm" onsubmit="return validateForm()" method="post">
+    //Name: <input type="text" name="fname">
+    //<input type="submit" value="submit">
+  //</form>
+//</body>
+  /*function validateForm() {
+    let x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
+  */
+  /* function myfunction() {
+    const message = document.getElementById("p01");
+    message.innerHTML = ""
+    let x = document.getElementById("demo").value ;
+    try {
+      if (x.trim()== "") throw "empty";
+      if (isNaN(x)) throw "not a number";
+      x = Number(x);
+      if(x>5) throw "too low";
+      if (x<10) throw "too high";
+
+    }
+      catch(err){
+        message.innerHTML = "Input is " + err ;
+      }
+  }
+ */
+  /*
+         const myObj = { name: "John", age: 31, city: "New York" };
+         const myJSON = JSON.stringify(myObj);
+         document.getElementById("demo").innerHTML= myObj.name + " from " + myObj.city + " is " + myObj.age + " years old.";
+ */
+  /*
+    const letters = new Set(["a", "A", "b", "B", "c", "C"]);
+    letters.delete("A",);
+    document.getElementById("demo").innerHTML = letters.size;
+  */
+
+  /*
+    const letters = new Map([["a"], ["A"], ["b"], ["B"], ["c"], ["C"]]);
+    letters.delete("A",);
+    document.getElementById("demo").innerHTML = letters.has("A");
+  */
+  /*
+  const letters = new Map([["a"], ["A"], ["b"], ["B"], ["c"], ["C"]]);
+    document.getElementById("demo").innerHTML = letters.has("a");
+  */
+  /*
+    const letters = new Map([["a"], ["A"], ["b"], ["B"], ["c"], ["C"]]);
+    letters.delete("A",);
+    document.getElementById("demo").innerHTML = letters.size;
+  */
+
+  /*
+  const letters = new Set();
+  letters.add("k")
+  document.getElementById("demo").innerHTML = letters.size; 
+  */
+
+  /*
+      const words= "Ram";
+      let text ="";
+      for (const a of words){
+         text += a + "<br>";
+      }
+      document.getElementById("demo").innerHTML = text;
+  */
+  /*  let x = "";
+     const myObj= {
+         name: "Rohit",
+         age: 21,
+         cars: [
+             {name: "Ford", models:["Fiesta", "Focus", "Mustang"]},
+             {name: "BMW", models:["320","X3", "X5"]},
+             {name: "Fiat", models:["500", "Panda"]}
+         ]
+     }
+     for (let i in myObj.cars){
+         x += "<h2>" + myObj.cars[i].name + "</h2>";
+         for (let j in myObj.cars[i].models){
+         x+= "<br>" + myObj.cars[i].models[j];
+     }
+ }
+ 
+ document.getElementById("demo").innerHTML = x;
+  */
+  /*const person = {
+          firstName: "Rohit",
+          lastName : "Bansal",
+          age : 21
+      }
+      document.getElementById("demo").innerHTML= person.firstName + " " + person.lastName +" is " + person.age +
+       " years old.";
+  */
+  /*      const text = '[ "name","Rohit", "age": 21, "city", "Hisar" ]';
+          const myArr = JSON.parse(text);
+          document.getElementById("demo").innerHTML = myArr[0];
+  */
+  /*        const text = '{"name":"Rohit", "birth":"2002-07-17" ,"city": "Hisar"}';
+          const obj = JSON.parse(text);
+          obj.birth = new Date(obj.birth);
+          document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth; 
+  */
+  /*
+     const myInfo = '{"name":"Rohit", "birth":"2002-07-17" ,"city": "Hisar"}';
+     const obj = JSON.parse(myInfo, function(key, value){
+         if (key== "birth"){
+             return new Date(value);
+         } else{
+             return value ;
+         }
+     });
+     document.getElementById("demo").innerHTML = obj.name + "," + obj.birth;
+  */
+  /*
+  const obj = '[ "name","Rohit", "age": 21, "city", "Hisar" ]';
+  const myJSON = JSON.stringify(obj);
+  document.getElementById("demo").innerHTML = myJSON;
+  */
+  /*  const obj = { name:"Rohit", today: new Date(), city: "Hisar" };
+    const myJSON = JSON.stringify(obj);
+    document.getElementById("demo").innerHTML= myJSON;
+  */
+
+  /*    const myJSON = "{'name': 'Rohit', 'age':21, 'City': 'Hisar'}";
+      const myObj = JSON.parse(myJSON);
+ 
+      let text = "";
+      for (const x in myObj) {
+          text += x + ",";
+      }
+      document.getElementById("demo").innerHTML = text;
+  */
+  /*
+          const myJSON = '{"name": "Rohit", "age": 21, "city": "Hisar", "cars":["Bugati", "Audi", "Mustang"]}';
+          const myObj = JSON.parse(myJSON);
+  
+          let text = "";
+          for (let i = 0; i < myObj.cars.length; i++) {
+              text += myObj.cars[i] + ",";
+          }
+          document.getElementById("demo").innerHTML = text;
+  */
+
+  /*let wordA = "indian";
+  let wordB = "dianin";
+  let len1  = wordA.length;
+  let len2 = wordB.length;
+  if (len1 !== len2){
+    console.log("invalid input");
+  }
+  let string1= wordA.split('').sort().join('');
+  let string2= wordB.split('').sort().join('');
+  if(string1===string2){
+    console.log("True");
+  }
+else{
+    console.log("False");
+}
+  */
+  /*
+  let jsonObj = {name:"Rohit", surname:"Bansal",}
+  console.log(jsonObj);
+  let myJsonStr = JSON.stringify(jsonObj);
+  console.log(myJsonStr);
+  myJsonStr= myJsonStr.replace('Rohit', 'Mohit');
+  console.log(myJsonStr);
+  newJsonObj= JSON.parse(myJsonStr);
+  console.log(newJsonObj);
+  */
+</script>
+</body>
+</html>

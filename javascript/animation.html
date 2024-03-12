@@ -1,0 +1,1159 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+  <body>
+    <div class="box" id="id1">This is a element1.</div>
+    <div class="box" id="id2">This is a element2.</div>
+  
+  <p id="demo"></p>
+
+  <form id="form">
+    <fieldset name="userFields">
+      <legend>Info</legend>
+      <input name="login" type="text">
+      <input name="login">
+    </fieldset>
+  </form>
+
+  <script>
+
+alert(form.element.login);
+let fieldset= form.element.userFields;
+alert("fieldset");
+alert(fieldset.element.login===form.element.login);
+form.login.name ="userName";
+alert(form.element.login);
+alert(form.element.userName);
+alert(form.userName == form.login);
+
+/*
+let obj ={
+  name:  "Rohit",
+  username: "bnslrohit03191",
+  address: "Hisar"
+}
+function Obj(gvienName){
+  this.name =gvienName;
+}
+Obj.prototype.getName= function(){
+  return this.name;
+}
+let obj2= new Obj("Harry");
+console.log(obj2);
+*/
+
+/*
+new Promise((resolve,reject)=>{
+  throw new Error("Whoops!");
+}).catch(function(error){
+  alert("the error is handled");
+})
+.then(()=> alert("Next successfull handler runs."));
+*/
+
+/*
+let promise= new Promise(function(resolve,reject){
+  setTimeout(()=>resolve(1),1000);
+})
+promise.then(function(result){
+  alert(result);
+  return result*2;
+})
+promise.then(function(result){
+  alert(result);
+  return result*2;
+})
+promise.then(function(result){
+  alert(result);
+  return result*2;
+});
+*/
+
+/*
+new Promise(function(resolve,reject){
+  setTimeout(()=>resolve(1),1000);
+})
+promise.then(function(result){
+  alert(result);
+  return result*2;
+}).then(function(result){
+  alert(result);
+  return result*2;
+}).then(function(result){
+  alert(result);
+  return result*2;
+}).then(function(result){
+  alert(result);
+  return result*2;
+}).then(function(result){
+  alert(result);
+  return result*2;
+}).then(function(result){
+  alert(result);
+  return result*2;
+});
+*/
+
+/*    
+let promise= new Promise(function(resolve,reject){
+  setTimeout(()=> reject(new Error("done")),1000);
+});
+promise.then(
+  result=>alert(result),
+  error=>alert(error)
+)
+*/
+
+/*
+class ValidationError extends Error{
+  constructor(message){
+    super(message);
+    this.name="ValidationError";
+  }
+}
+  function test(){
+    throw new ValidationError("Whoops");
+  }
+try {
+  test();
+} catch(err){
+  alert(err.message);
+  alert(err.name);
+  alert(err.stack);
+}
+*/
+
+/*
+let json= '{"age": 22}'
+try {
+  let user = JSON.parse(json);
+  if (!user.name){
+    throw new ReferenceError("Incomplete data: No Name found");
+  }
+ttfggftn();
+
+  alert(user.name);
+}
+catch(err){
+  if (err instanceof ReferenceError){
+
+  alert('JSON Error:' + err.message);
+} else{
+  throw err;
+}
+}
+*/
+
+/*
+try {
+  user = {};
+} catch(err) {
+  if( err instanceof ReferenceError){
+    alert("ReferenceError");
+  }
+}
+*/
+
+/*
+let json= '{"age": 22}'
+try {
+  let user = JSON.parse(json);
+  if (!user.name){
+    throw new SyntaxError("Incomplete data: No Name found");
+  }
+  alert(user.name);
+}
+catch(err){
+  alert('JSON Error' + err.message);
+}
+*/
+
+/*
+try{
+  alert('Start of the try runs.');
+  eqfefe;
+  alert('End of the try runs(Never reached).');
+} catch(err){
+  alert(err.name);
+}
+*/
+
+/*
+try {
+  alert('Start of the try runs');
+
+  alert('End of the try runs.')
+} catch(err){
+  alert('Catch is ignored, No error found.');
+}
+*/
+
+/*
+class Employee{
+  login(){
+    console.log(`Employee has logged in.`);
+  }
+  logout(){
+    console.log(`Employee has logged out.`);
+  }
+  requestLeaves(leaves){
+    console.log(`Employee has requested ${leaves} leaves.`);
+  }
+}
+class Programmer extends Employee{
+  requestCoffee(x){
+    console.log(`Employee has requested ${x}coffee`);
+  }
+  requestLeaves(leaves){
+    console.log(`Employee has requested ${leaves+2} leaves.`);
+  }
+}
+let e = new Employee()
+e.login();
+e.requestLeaves(3);
+*/
+
+/*
+let P1 = new Promise(resolve, reject);
+{
+  console.log("Promiseis pending")
+  setTimeout((resolved) =>{
+    console.log("I am a promsie and I am resolved")
+     resolved(true)
+  
+  }, 5000)
+}
+console.log(P1);
+*/
+
+/*
+let id = document.getElementById("id1");
+console.log(id1);
+console.log(id1.matches(".class"));
+console.log(id1.matches(".box"));
+*/
+
+
+/*    
+class PowerArray extends Array {
+  isEmpty(){
+    return this.length=== 0;
+  }
+}
+let  arr = new PowerArray(1,2,3,5,6,8);
+alert(arr.isEmpty());
+
+let filteredArr = arr.filter(item=>item>5);
+alert(filteredArr);
+alert(filteredArr.isEmpty());
+*/
+
+
+/*
+class CoffeeMachine{
+  _waterAmount= 0;
+  set waterAmount(value){
+    if (value<0){ 
+      value=0;
+    }
+    this._waterAmount= value;
+  }
+  get waterAmount(){
+    return this._waterAmount;
+  }
+  constructor (power){
+    this._power= power;
+  }
+}
+ let coffeeMachine = new CoffeeMachine(200);
+ coffeeMachine.waterAmount=0;
+ alert(coffeeMachine.waterAmount);
+*/
+
+
+/*
+    class Animal {
+      static planet = "Earth";
+
+      constructor(name, speed) {
+        this.speed = speed;
+        this.name = name;
+      }
+
+      run(speed = 0) {
+        this.speed += speed;
+        alert(`${this.name} runs with speed ${this.speed}.`);
+      }
+
+      static compare(animalA, animalB) {
+        return animalA.speed - animalB.speed;
+      }
+
+    }
+
+    class Rabbit extends Animal {
+      hide() {
+        alert(`${this.name} hides!`);
+      }
+    }
+
+    let rabbits = [
+      new Rabbit("White Rabbit", 10),
+      new Rabbit("Black Rabbit", 5)
+    ];
+
+    rabbits.sort(Rabbit.compare);
+
+    rabbits[0].run();
+    alert(Rabbit.planet);
+*/
+
+    /*
+    class Article{
+      constructor(title, date){
+        this.title = title;
+        this.date = date;
+      }
+      static compare(articleA, articleB){
+        return articleA.date- articleB.date;
+      }
+    }
+    let articles= [
+      new Article("HTML", new Date(2019,1,12)),
+      new Article("CSS", new Date(2019,0,11)),
+      new Article("JAVASCRIPT", new Date(2019,11,14))
+    ];
+    articles.sort(Article.compare);
+    alert(articles[0].title);
+    */
+
+    /*
+    let animal ={
+      name: 'animal',
+      eat(){
+        alert(`${this.name}eats`);
+      }
+    };
+    let rabbit= {
+      __proto__: animal,
+      name: "Rabbit",
+      eat(){
+        super.eat();
+      }
+    };
+    let longEar= {
+      __proto__: rabbit,
+      name:" Long Ear ",
+      eat(){
+        super.eat();
+      }
+    };
+    longEar.eat();
+    */
+
+    /*
+    class Animal{
+      showName(){
+        alert('animal');
+      }
+      constructor(){
+        this.showName();
+      }
+    }
+      class Rabbit extends Animal{
+        showName(){
+          alert('rabbit');
+        }
+      }
+    new Animal();
+    new Rabbit();
+    */
+
+    /*
+    class Animal {
+      name = 'animal';
+      constructor (){
+        alert(this.name);
+      }
+    }
+    class Rabbit extends Animal{
+      name = 'rabbit';
+    }
+    
+    new Animal();
+    new Rabbit();
+    */
+
+    /*
+    class Animal {
+      constructor(name){
+        this.speed= 0;
+        this.name = name;
+      }
+      run (speed){
+        this.speed= speed;
+        alert(`${this.name} runs with the speed ${this.speed}.`);
+      }
+      stop(){
+        this.speed= 0;
+        alert(`${this.name} stands still.`);
+      }
+     }
+      class rabbit extends Animal{
+        hide(){
+          alert(`${this.name} hide!`);  
+        }
+        stop(){
+          super.stop();
+          this.hide();
+        }
+      }
+    let Rabbit = new rabbit("white rabbit");
+    Rabbit.run(2);
+    Rabbit.stop();
+    */
+
+    /*
+    class User {
+      constructor(name){this.name=name;}
+      sayHi(){alert(this.name);}
+    }
+    alert(typeof User);
+    alert (User === User.prototype.constructor);
+    alert(User.prototype.sayHi);
+    alert(Object.getOwnPropertyNames(User.prototype));
+    */
+
+    /*
+    let user = {
+      name: "John",
+      surname: "Smith",
+      set fullName(value){
+        [this.name, this.surname]= value.split(" ");
+      },
+      get fullName(){
+        return `${this.name} ${this.surname}`;
+      }
+    };
+    let admin = {
+      _proto_: user,
+      isAdmin: true
+    };
+    alert(admin.fullName);
+    admin.fullName =  "Ethen Hunt";
+    alert(admin.fullName);
+    alert(user.fullName);
+    */
+
+    /*    
+    let user = {
+      get name() {
+        return this._name;
+      },
+      set name(value){
+        if (value.length<4){
+          alert("Name is too short, yu to have more than 4 characters.");
+          return;  
+        }
+        this._name =  value;
+      }
+    };
+    user.name= "Aman";
+    alert(user.name);
+    user.name= "";
+    */
+
+
+    /*
+    let user  = {
+      name: "Ethen",
+      surname: "Hunt",
+    };
+    Object.defineProperty(user, 'fullName',{
+      get(){
+        return `${this.name} ${this.surname}`;
+      },
+      set(value){
+        [this.name, this.surname] = value.split(" ");
+      }
+    });
+    alert(user.fullName);
+    for(let key in user) alert(key);
+    */
+
+    /*
+    let user = {
+      name: " Ethen",
+      surname: "Hunt",
+    
+      getFullName(){
+        return `${this.name} ${this.surname}`;
+      },
+      set fullName(value){
+        [this.name, this.surname] = value.split(" ");
+      }
+    }
+    user.fullName= "Alice Cooper";
+    alert(user.name);
+    alert(user.surname);
+    */
+
+    /*
+    let descriptor = Object.getOwnPropertyDescriptor(Math, "PI");
+    alert(JSON.stringify(descriptor, null, 2));
+    */
+
+    /*
+    let user ={
+      name: 'Rohit' 
+    };
+    let descriptor = Object.getOwnPropertyDescriptor(user, "name");
+    alert(JSON.stringify(descriptor, null, 2));
+    */
+
+    /*
+    function sayHi(){
+      alert("Hi");
+      sayHi.counter++;
+    }
+    sayHi.counter=0;
+    sayHi();
+    sayHi();
+    sayHi();
+    sayHi();
+    alert(`Called ${sayHi.counter} times`);
+    */
+
+    /*
+    function ask(question, ...handlers){
+      let isYes = confirm(question);
+      for (let handler of handlers){
+        if(handler.length = 0){
+           if(isYes) handler();
+        }else {
+          handler(isYes);
+        }
+      }
+    }
+    ask("Question?", ()=>alert("You said yes"), result=> alert(result));
+    */
+
+    /*
+    let obj = [1,2,3,5,8,9];
+    let objCopy= [...obj];
+    alert(JSON.stringify(obj)=== JSON.stringify(objCopy));
+    alert(obj===objCopy);
+    obj.pop(10);
+    alert(JSON.stringify(obj));
+    alert(JSON.stringify(objCopy));
+    */
+
+    /*
+    let obj = {a:1, b:2, c:3, d:4};
+    let objCopy= {...obj};
+    alert(JSON.stringify(obj)=== JSON.stringify(objCopy));
+    alert(obj===objCopy);
+    obj.e=5;
+    alert(JSON.stringify(obj));
+    alert(JSON.stringify(objCopy));
+    */
+
+
+    /*
+    function factorial(n){
+      return n?n*factorial(n-1):1;
+    }
+    alert(factorial(5));
+    */
+
+    /*    
+    function sumTo(n){
+      return n*(n+1)/2;
+    }
+    alert(sumTo(10));
+    */
+
+    /*
+    function sumTo(n){
+      let sum = 0;
+      for (i=1;i<=n; i++){
+      sum+=i;
+      }
+    return sum;
+    }
+    alert(sumTo(10));
+    */
+
+    /*    
+    function sumTo(n){
+      if (n==1)return 1;
+      return n + sumTo(n-1);
+    }
+    alert(sumTo(10));
+    */
+
+    /*    function pow(x, n) {
+          if (n == 1) {
+            return x;
+          } else {
+            return x * pow(x, n - 1);
+          }
+        }
+        alert(pow(5, 2));
+    */
+
+    /*
+    let id= Symbol("id");
+    
+    let user = {
+      name: "John",
+      age: 30,
+      [id]: 152
+    };
+    for (let key in user) alert(key);
+    alert("Direct:" + user[id]);
+    */
+
+    /*
+    let arr = [ 1,2,3,4,5,6,7,8,9,10];
+    let removeArr= [];
+    for(let i =0; i < arr.length; i++){
+      if (arr[i]< 6){
+        removeArr.push(arr.shift());
+      }else {
+        break;
+      }
+    }
+    document.getElementById("demo").innerHTML = removeArr;
+    */
+
+    /*
+    let arr = [32,32,96,100];
+    arr.forEach((element,index) =>{
+      arr[index]= element +100;
+    });
+    document.getElementById("demo").innerHTML = arr;
+    */
+
+    /*
+    function checkSorted(arr){
+      for (let i = 0; i < arr.length-1; i++){
+        if(arr[i]> arr[i+1]){
+          return false;
+        }
+      }
+    return true;
+    }
+    const arr1 = [32,32,96,100];
+    const arr2= [52,10,3,88];
+    console.log(checkSorted(arr1));
+    console.log(checkSorted(arr2));
+    */
+
+    /*
+    function findMissingNumber(arr){
+      const n = 10;
+      const allNumbers = new Set(Array.from({length: n},(_, i) =>i+1));
+      for(const num of arr){
+        allNumbers.delete(num);
+      }
+    const missingNumber= Array.from(allNumbers);
+    return missingNumber;
+    }
+    
+    const array = [1,2,3,4,5,6,7,8,10];
+    const missingNumber =findMissingNumber(array);
+    document.getElementById("demo").innerHTML = "Missing Number is " + missingNumber;
+    */
+
+    /*
+     function reorderArrayByIndex(originalArray, indexArray){
+      return indexArray.map(
+        index => originalArray[index]);
+     }
+    const originalArray = ["HTML", "CSS", "JAVASCRIPT", "MONGODB", "REACT.JS"];
+    const indexArray = [4, 0, 1, 2, 3];
+    const reorderArray = reorderArrayByIndex(originalArray, indexArray);
+    document.getElementById("demo").innerHTML = reorderArray;
+    */
+
+    /*
+   function createArray(N){
+     let newArr= [];
+     for(i=0; i<=N; i++){
+       newArr.push(i);
+     }
+     return newArr;
+   }
+   let N= 100;
+   let arr = createArray(N);
+   console.log(arr);
+   */
+
+    /*
+    function LargestElement(arr){
+      if (arr.length ===0){
+        console.log("Array is empty");
+      }
+      return Math.max.apply(null, arr);
+    }
+    const arr = [1,8,26,9,499];
+    console.log(arr);
+    console.log(LargestElement(arr));
+    */
+
+    /*
+    function LargestElement(arr) { 
+      if (arr.length === 0) { 
+        console.log("Array is empty"); 
+      } 
+    
+      return Math.max.apply(null, arr); 
+    } 
+    const arr = [22, 65, 1, 39]; 
+    console.log("Largest in given array is " + LargestElement(arr));
+    
+    
+    function createArray(start, end){
+      let result=[];
+      for (let i =start; i<=end; i++){
+        result.push(i);
+      } 
+      return result;
+    }
+    let result= createArray(1,10);
+    document.getElementById("demo").innerHTML = result;
+    */
+
+    /*
+    let myArray = new Array(5);
+    for (let i = 0; i < myArray.length; i++) {
+      myArray[i] = "Hello";
+    }
+    document.getElementById("demo").innerHTML= myArray;
+    */
+
+    /*
+    let arr =[1,88,52,6,4,75,0];
+    let arr1 = [0,1,5,8,7,9,6,3];
+    let arr2 = [88,8,21,4];
+    const Arr = [...arr,...arr1,...arr2];
+    let mergedArr = [...new Set(Arr)]
+    document.getElementById("demo").innerHTML = mergedArr;
+    */
+
+    /*
+      function Function() {
+                OtherFunction();
+            }
+            function OtherFunction() {
+                console.trace();
+            }
+    */
+
+    /*
+function myURL() {
+  var w3s = document.URL;
+  document.getElementById("URL").innerHTML = w3s;
+}
+*/
+
+    /*
+    function w3school(){
+     let x = document.doctype.name;
+     document.getElementById("sudo").innerHTML=  x;
+    
+    }
+    */
+    /*
+      function w3school(){
+     let x = document.baseURI;
+     document.getElementById("w3s").innerHTML= "The URI of the page is" + x;
+    }
+    */
+
+    /*
+    function w3school(){
+     let w3s= window.open();
+     w3s.document.open();
+     w3s.document.write('<h1>PRACTICE</h1>');
+     w3s.document.close;
+    }
+     */
+
+    /*
+    function DomManipulation() {
+     let x = document.activeElement.tagName;
+     document.getElementById("javascript DOM").innerHTML = x;
+    }
+    */
+    /*
+    function getAdd(){
+     const Num1= Number(document.getElementById("value1").value); 
+   
+     const Num2= Number(document.getElementById("value2").value);
+     const add= Num1 + Num2;
+     document.getElementById("result").innerHTML = add;
+   
+     document.getElementById("result").innerHTML = "Addition :" + add;
+     document.getElementById("result").style.color = "blue";
+   }
+    */
+
+    /*
+   const person  ={
+     fullName: function(){
+       return this.firstName + " " + this.lastName ;
+     }
+   }
+     const person1 = {
+       firstName: "Rohit",
+       lastName: "Bansal"
+     }
+   
+     const person2 = {
+       firstName: "Mohit",
+       lastName: "Bansal"
+     }
+   document.getElementById("demo").innerHTML = person.fullName.call(person2);
+   */
+    /*
+  
+  myNumbers = {};
+  myNumbers[Symbol.iterator]= function(){
+    let n = 0;
+    done = false;
+    return {
+      next(){
+        n+=2;
+        if (n==100) {done= true}
+        return {value:n, done:done};
+      }
+    };
+  }
+  let iterator = myNumbers[Symbol.iterator]();
+   
+  let text=""
+   while (true){
+    const result = iterator.next();
+    if (result.done) break;
+    text+= result.value + "<br>";
+   }
+   document.getElementById("demo").innerHTML = text;
+  */
+
+    /*
+   const obj= {counter: 1};
+   Object.defineProperty (obj, "reset", {
+     get: function() {this.counter =0;}
+   });
+   
+   Object.defineProperty (obj, "increment", {
+     get: function() {this.counter++;}
+   });
+   
+   Object.defineProperty (obj, "decrement", {
+     get: function() {this.counter --;}
+   });
+   
+   Object.defineProperty (obj, "add", {
+     set: function(value) {this.counter += value ;}
+   });
+   
+   Object.defineProperty (obj, "subtract", {
+     set: function(value) {this.counter -= value;}
+   });
+   obj.reset;
+   obj.add = 5;
+   obj.subtract = 1;
+   obj.increment;
+   obj.decrement;
+   document.getElementById("demo").innerHTML = obj.counter;
+   
+   Object.defineProperty (obj, "reset", {
+     get: function() {this.counter =0;}
+   });
+   */
+
+    /*
+    const points= [450,82,96,71,15,23,1,];
+    document.getElementById("demo").innerHTML = points;
+    function myFunction1(){
+      points.sort();
+      document.getElementById("demo").innerHTML = points;
+    }
+    function myFunction2(){
+      points.sort(function(a,b){return a-b});
+      document.getElementById("demo").innerHTML= points;
+    }
+    function myFunction3(){
+      points.sort(function(){return 0.5-Math.random()});
+      document.getElementById("demo").innerText= points;
+    }
+    */
+
+    /*
+     let schedule = [ 'I', 'have', 'a', 'meeting', 'tomorrow'];
+    
+     document.getElementById("demo").innerHTML=  schedule.toString(s);
+     */
+
+    /*
+   document.getElementById("demo").innerHTML= parseFloat(10) + '<br>' +
+   parseFloat('10') + '<br>' +
+   parseFloat(10.33) + '<br>' +
+   Number.parseInt('155')
+   
+   let x = Number.MIN_SAFE_INTEGER;
+   document.getElementById("demo").innerHTML = x;
+   */
+    /* function max_of_three(x, y, z) {
+            max_val = 0;
+            if (x > y) {
+              max_val = x;
+            } else {
+              max_val = y;
+            }
+            if (z > max_val) {
+              max_val = z;
+            }
+            return max_val;
+          }
+    
+          console.log(max_of_three(1, 0, 1));
+          console.log(max_of_three(-10, -20));
+          console.log(max_of_three(1000, 510, 440));
+    
+          function front_back(str) {
+            first = str.substring(0, 1);
+            return first + str + first;
+          }
+          console.log(front_back('aman'));
+          console.log(front_back('ravi'));
+          console.log(front_back('a'));
+          console.log(front_back('abhishek'));
+          console.log(front_back('ram'));
+    */
+
+    /*
+    const num = Math.ceil(Math.random() * 10);
+    console.log(num);
+     const gnum = prompt('Guess the number between 1 and 10 inclusive');
+     if (gnum == num)
+       console.log('Matched');
+      else
+       console.log('Not matched, the number was '+gnum);
+    */
+
+    /*
+    class Car {
+      constructor (name, year) {
+        this.name = name;
+        this.year = year;
+      }
+    
+    age() {
+      const date = new Date();
+      return date.getFullYear() - this.year;
+    }
+    }
+    const myCar = new Car("BMW", 2019);
+    document.getElementById("demo").innerHTML = 
+    "My car is " +  myCar.age() + " years old";
+    */
+
+    /*
+    const div = document.getElementById("myDIV");
+    div.addEventListener("animationstart", myStartFunction);
+    
+    function myStartFunction(event) {
+      this.innerHTML = "The animation-name is: " + event.animationName;
+    }
+    */
+
+    /*
+    const myAwesomeArray = [
+      [1], [2], [3], [4], [5]
+    ];
+    
+    let geeks = myAwesomeArray.flat(); 
+    console.log(geeks);
+    */
+
+    /*
+    let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+    for (let i=0; i<courses.length; i++){
+      console.log(courses[i]);
+    }
+    */
+
+
+    /*
+    let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+    
+    courses.length = 71;
+    
+    console.log("Array After Increase the Length: ", courses);
+    
+    courses.length = 5;
+    console.log("Array After Decrease the Length: ", courses)
+    */
+
+    /*
+    function replacer(key, value) 
+      {
+          if (typeof value === "number")
+            {
+              return undefined;
+            }
+              return value;
+      }
+    
+    const func = {
+      foundation: "Toyota",
+      model: "square",
+      week: 35,
+      transport: "car",
+      month: 12,
+    };
+    let a = JSON.stringify(func, replacer);
+    document.getElementById("demo").innerHTML= a;
+    */
+
+    /*
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const f = fruits.entries();
+    
+    for (let x of f) {
+      document.getElementById("demo").innerHTML += x + "<br>";
+    }
+    */
+    /* const arr1= [1,2,3];
+    const arr2= [3,2,1];
+    const arr3= [1,2,3];
+    function compareArrays(arrFirst,arrSecond){
+      if (arrFirst.length !== arrSecond.length){
+        return false;
+      }
+    return arrFirst.every((value, index)=>{
+      if (Array.isArray(value)&& Array.isArray(arrSecond[index])){
+        return  compareArrays(value,arrSecond[index]);
+      }  else {
+        return value=== arrSecond[index];
+      }
+    })
+    };
+    document.getElementById("demo").innerHTML=compareArrays(arr1,arr2);
+    document.getElementById("demo1").innerHTML=compareArrays(arr1,arr3);
+    */
+
+
+    /*let str = Array("Be", "a", "Coding", "Ninja");
+    str.sort();
+    // Logging str
+    console.log(str);
+    */
+    /*
+    const arr = ["My", ["Name"], "Is", "Rohit"];
+    const ARR = arr.flat();
+    console.log(ARR);
+    const newArr= arr.join(" ");
+    console.log(newArr);
+    */
+    /*
+    const arr= [100,528,625];
+    let sum = 0;
+    arr.forEach(
+      function sumUntillNow(e){
+        sum= sum + e;
+        console.log(sum);
+       }
+    );
+    */
+    /*
+    const numbers= [50,3,88,5,75,20,1];
+    document.getElementById("demo").innerHTML= numbers;
+    
+    function myfunction1(){
+      numbers.sort();
+      document.getElementById("demo").innerHTML= numbers;
+    }
+    
+    function myfunction(){
+      numbers.sort(function(a,b){return a-b});
+      document.getElementById("demo").innerHTML= numbers;
+    }
+    */
+    /*
+       const name= ["Rohit", "Naman", "Manan", "Raman", "Vivek"];
+       let nameLen = name.length;
+       
+       let text = "<ul>";
+        for (let i = 0; i < nameLen; i++) {
+            text +="<li>" + name[i] + "<li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+    */
+
+    /*
+ var x = document.getElementById("myBtn");
+    x.addEventListener("mouseover", myfunction);
+    x.addEventListener("click", mySecondfunction);
+    x.addEventListener("mouseout", myThirdfunction);
+ 
+    function myfunction(){
+        document.getElementById("demo").innerHTML += "Mosused Over <br>";
+    }
+ 
+    function mySecondfunction(){
+        document.getElementById("demo").innerHTML += "Clicked <br>";
+    }
+    function myThirdfunction(){
+        document.getElementById("demo").innerHTML += "Mosused Out <br>";
+    }
+    */
+    /*
+    function myMove(){
+      let id = null;
+      const elem = document.getElementById("animate");
+      let pos = 0;
+      clearInterval(id);
+      id = setInterval(frame, 5);
+      function frame(){
+        if (pos == 350){
+          clearInterval(id);
+        }
+        else {
+          pos++;
+          elem.style.top = pos +"px";
+          elem.style.left = pos +"px";
+    
+        }
+      }
+    }
+    */
+
+    /*
+    <P>Click Me</P>
+    <button id="myBtn">Try Me</button>
+    
+    <script>
+        var x = document.getElementById("myBtn");
+        x.addEventListener("click", myfunction);
+        x.addEventListener("click", otherFunction);
+        function myfunction(){
+            alert("Hii");
+        }
+    function otherFunction(){
+        alert("This Function is Also Executed");
+    }
+    */
+  </script>
+  </body>
+</head>
+
+</html>
